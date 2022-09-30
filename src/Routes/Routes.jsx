@@ -10,6 +10,7 @@ const Routes = () => {
     return (
         <BrowserRouter>
             <Layout>
+                
                 <Switch>
 
                     <Route exact path={'/'} component={Home} />

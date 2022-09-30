@@ -1,6 +1,7 @@
 @import './Login/Login.css';
 @import './Login/Subscribe.css';
 @import './Login/PasswordRecover.css';
+@import './Components/Header/index.css';
 
 :root {
   --white: #FFFFFF;
