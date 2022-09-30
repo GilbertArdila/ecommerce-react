@@ -1,10 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Layout } from '../Layout/Layout';
-import { Login } from '../Login/Login';
-import { PasswordRecover } from '../Login/PasswordRecover';
-import { Home } from '../Pages/Home';
-import { NotFound } from '../Pages/NotFound';
+import { Login,PasswordRecover } from '../PrivateRoutes';
+import { Home,NotFound } from '../Pages';
 
 const Routes = () => {
     return (

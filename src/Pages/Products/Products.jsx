@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.css';
-import { Cards } from '../../Components/Header/Cards/Cards';
+import { Cards } from '../../Components';
 
 const Products = () => {
   return (
