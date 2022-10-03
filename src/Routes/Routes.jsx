@@ -1,7 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Layout } from '../Layout/Layout';
-import { Login,PasswordRecover } from '../PrivateRoutes';
+import { Layout } from '../Containers';
+import { Login} from '../PrivateRoutes';
+import { CheckOut, CreateAccount, MyAccount, NewPassword, Orders, PasswordRecover, SendEmail } from '../Pages';
 import { Home,NotFound } from '../Pages';
 
 const Routes = () => {
@@ -14,12 +15,12 @@ const Routes = () => {
                     <Route exact path={'/'} component={Home} />
                     <Route exact path={'/login'} component={Login} />
                     <Route exact path={'/recovery-password'} component={PasswordRecover} />
-                    {/* <Route exact path={'/send-email'} component={SendEmail} />
+                    <Route exact path={'/send-email'} component={SendEmail} />
                     <Route exact path={'/new-password'} component={NewPassword} />
                     <Route exact path={'/singup'} component={CreateAccount} />
-                    <Route exact path={'/checkout'} component={Checkout} />
+                    <Route exact path={'/checkout'} component={CheckOut} />
                     <Route exact path={'/orders'} component={Orders} />
-                    <Route exact path={'/account'} component={MyAccount} /> */}
+                    <Route exact path={'/account'} component={MyAccount} />
                     <Route path={'*'} component={NotFound} />
 
                 </Switch>

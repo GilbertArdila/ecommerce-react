@@ -1,0 +1,13 @@
+.navbar-left ul li a,
+.navbar-right ul li a {
+	text-decoration: none;
+	color: var(--very-light-pink);
+	border: 1px solid var(--white);
+	padding: 8px;
+	border-radius: 8px;
+}
+.navbar-left ul li a:hover,
+.navbar-right ul li a:hover {
+	border: 1px solid var(--hospital-green);
+	color: var(--hospital-green);
+}

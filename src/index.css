@@ -1,7 +1,25 @@
-@import './PrivateRoutes/Login/Login.css';
-@import './PrivateRoutes/Subscribe/Subscribe.css';
-@import './privateRoutes/PasswordRecovery/PasswordRecover.css';
+
 @import './Components/Header/index.css';
+@import './Components/Links/index.css';
+@import './Components/Menu/index.css';
+@import './Components/Order/index.css';
+@import './Components/OrderItem/index.css';
+@import './Components/ProductInfo/index.css';
+@import './Components/ProductItem/index.css';
+@import './Components/ShoppingCardItem/index.css';
+@import './Containers/MyOrder/index.css';
+@import './Containers/ProductDetail/index.css';
+@import './Containers/ProductList/index.css';
+@import './PrivateRoutes/Login/Login.css';
+@import './Pages/CheckOut/index.css';
+@import './Pages/CreateAccount/index.css';
+@import './Pages/MyAccount/index.css';
+@import './Pages/NewPassword/index.css';
+@import './Pages/NotFound/index.css';
+@import './Pages/Orders/index.css';
+@import './Pages/PasswordRecovery/PasswordRecover.css';
+@import './Pages/SendEmail/index.css';
+
 
 :root {
   --white: #FFFFFF;

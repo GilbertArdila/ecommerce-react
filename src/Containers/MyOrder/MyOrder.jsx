@@ -7,7 +7,7 @@ const MyOrder = () => {
     
 		<aside className="MyOrder">
         <div className="title-container">
-            <img src="./icons/flechita.svg" alt="arrow" />
+            <img src="flechita.svg" alt="arrow" />
             <p className="title">My order</p>
         </div>
         <div className="my-order-content">

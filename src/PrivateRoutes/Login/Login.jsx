@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button } from '../../Components/Buttons/Button'
 import './Login.css'
 const Login = () => {
     return (
@@ -19,7 +18,7 @@ const Login = () => {
                 <a href="/">Forgot my password</a>
                 <form />
                
-                    <Button text={'Sign up'}/>
+                <button className="secondary-button signup-button">Sign up</button>
             
                     
                 
