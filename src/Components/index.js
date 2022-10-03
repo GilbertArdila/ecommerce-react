@@ -1,8 +1,8 @@
-export * from './AsideMyOrder/AsideMyOrder';
-export * from './AsideProductOrder/ProductOrder';
-export *  from './Cards/Cards';
-export * from './CategoriesMenu/CategoriesMenu';
-export *  from './Header/Header';
-export *  from './MyOrderMenu/MyOrdersMenu';
+export * from './Header/Header';
+export * from './Menu/Menu';
 export * from './Order/Order';
-export *  from './ShopingCard/ShopingCard';
+export * from './OrderItem/OrderItem';
+export * from './ProductInfo/ProductInfo';
+export * from './ProductItem/ProductItem';
+export * from './ShoppingCardItem/ShopiingCardItem';
+

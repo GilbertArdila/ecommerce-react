@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.css';
-import { Order } from '../../Components/Order/Order';
+import { Order } from '../../Components';
 
 const Orders = () => {
   return (
