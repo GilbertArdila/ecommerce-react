@@ -1,22 +1,35 @@
-import React from 'react';
+import React,{useContext} from 'react';
+import { AppContext } from '../../Context/AppContext';
 import './index.css';
 import {OrderItem} from '../../Components'
 
-const MyOrder = () => {
+const MyOrder = ({setToggleOrders}) => {
+ const {state}=useContext(AppContext);
+
+ const handleToggle=()=>{
+    setToggleOrders(false)
+ }
+
+ const finalPrice=state.cart.reduce((sum,item)=>sum+parseInt(item.price),0)
+ 
   return (
     
 		<aside className="MyOrder">
         <div className="title-container">
-            <img src="flechita.svg" alt="arrow" />
+            <img src="flechita.svg" alt="arrow" onClick={handleToggle}/>
             <p className="title">My order</p>
         </div>
         <div className="my-order-content">
-            <OrderItem />
+            {/* hacemos render del número de elementos que están en el estado */}
+            {state.cart.map(product=>(
+                 <OrderItem  product={product} key={`orderItem-${product.id}`}/>
+            ))}
+           
             <div className="order">
                 <p>
                     <span>Total</span>
                 </p>
-                <p>$560.00</p>
+                <p>${finalPrice}</p>
             </div>
             <button className="primary-button">
                 Checkout
