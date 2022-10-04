@@ -1,13 +1,21 @@
-import React from 'react';
 import './index.css';
 import {ProductItem} from '../../Components';
+import {API} from '../../API/API';
+import { useGetProducts } from '../../Hooks/UseGetProducts';
 
 const ProductList = () => {
+    const products=useGetProducts(API)
+	
   return (
     
 		<section className="main-container">
 			<div className="ProductList">
-				<ProductItem />
+				{!products.lenght && products.map(product=>(
+					<ProductItem  
+					key={product.id}
+					product={product}
+					/>
+				))}
 			</div>
 		</section>
 	

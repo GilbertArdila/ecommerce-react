@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../../Components';
 import './index.css';
 
 const MyAccount = () => {
@@ -18,8 +19,11 @@ const MyAccount = () => {
           <label htmlFor="password" className="label">Password</label>
           <p className="value">*********</p>
         </div>
-
-        <input type="submit" value="Edit" className="secondary-button my-account-button"/>
+         <Button 
+         styles={'secondary-button my-account-button'}
+         text={'Edit'}
+         type={'submit'}/>
+       
       </form>
     </div>
   </div>

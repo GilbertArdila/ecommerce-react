@@ -5,3 +5,7 @@
 - BrowserRouter
 
 - Switch
+
+- Statefull and Stateless components
+
+- Atomic design

@@ -15,7 +15,10 @@ const Login = () => {
                 <label htmlFor="password" className="label">Password</label>
                 <input type="password" id="password" placeholder="*********" className="input input-password" />
 
-                <input type="submit" value="Log in" className="primary-button login-button" />
+                
+                <Button text={'Log in'} 
+                styles={'primary-button login-button'}
+                type={'submit'}/>
 
                 <a href="/">Forgot my password</a>
                 <form />
