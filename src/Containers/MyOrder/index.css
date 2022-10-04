@@ -4,6 +4,8 @@
 	box-sizing: border-box;
 	position: absolute;
 	right: 0;
+	z-index: 10;
+	background-color: var( --text-input-field);
 }
 .title-container {
 	display: flex;
