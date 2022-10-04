@@ -4,9 +4,14 @@ import { Layout } from '../Containers';
 import { Login} from '../PrivateRoutes';
 import { CheckOut, CreateAccount, MyAccount, NewPassword, Orders, PasswordRecover, SendEmail } from '../Pages';
 import { Home,NotFound } from '../Pages';
+import {AppContext} from '../Context/AppContext';
+import { UseInitialState } from '../Hooks';
 
 const Routes = () => {
+    //to use context
+    const initialState=UseInitialState();
     return (
+        <AppContext.Provider value={initialState}>
         <BrowserRouter>
             <Layout>
                 
@@ -26,6 +31,7 @@ const Routes = () => {
                 </Switch>
             </Layout>
         </BrowserRouter>
+        </AppContext.Provider>
     )
 }
 

@@ -1,7 +1,7 @@
 import './index.css';
 import {ProductItem} from '../../Components';
 import {API} from '../../API/API';
-import { useGetProducts } from '../../Hooks/UseGetProducts';
+import { useGetProducts } from '../../Hooks';
 
 const ProductList = () => {
     const products=useGetProducts(API)

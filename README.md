@@ -9,3 +9,9 @@
 - Statefull and Stateless components
 
 - Atomic design
+
+- useRef
+
+- createContext
+
+- customHooks

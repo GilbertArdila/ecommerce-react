@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import { Links } from '../Links/Links'
 import { Menu } from '../Menu/Menu';
+import { AppContext } from '../../Context/AppContext';
 
 const Header = () => {
 	const [toggle, setToggle] = useState(false);
+	const {state}=useContext(AppContext);
 
 	const handleToggle=()=>{
 		setToggle(!toggle)
@@ -25,7 +27,7 @@ const Header = () => {
 					onClick={handleToggle}>platzi@example.com</li>
 					<li className="navbar-shopping-cart">
 						<img src="icon_shopping_cart.svg" alt="shopping cart" />
-						<div>2</div>
+						{state.cart.length> 0 ? <div>{state.cart.length}</div>  : null }
 					</li>
 				</ul>
 			</div>
