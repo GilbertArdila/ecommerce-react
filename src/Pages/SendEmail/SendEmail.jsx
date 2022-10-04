@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../../Components';
 import './index.css';
 
 const SendEmail = () => {
@@ -11,7 +12,10 @@ const SendEmail = () => {
 				<div className="email-image">
 					<img src="email.svg" alt="email" />
 				</div>
-				<button className="primary-button login-button">Login</button>
+				<Button styles={'primary-button login-button'}
+				text={'Login'}
+				type={'button'}/>
+				
 				<p className="resend">
 					<span>Didn't receive the email?</span>
 					<a href="/">Resend</a>

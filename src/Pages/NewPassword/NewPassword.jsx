@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../../Components';
 import './index.css';
 
 const NewPassword
@@ -15,8 +16,10 @@ const NewPassword
 
                     <label htmlFor="new-password" className="label">Password</label>
                     <input type="password" id="new-password" placeholder="*********" className="input input-password" />
-
-                    <input type="submit" value="Confirm" className="primary-button login-button" />
+                    <Button styles={'primary-button login-button'}
+                    text={'Confirm'}
+                    type={'button'}/>
+                    
                 </form>
             </div>
         </div>

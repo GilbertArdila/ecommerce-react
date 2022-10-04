@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../../Components';
 import './index.css';
 
 const CreateAccount = () => {
@@ -17,8 +18,10 @@ const CreateAccount = () => {
           <label htmlFor="password" className="label">Password</label>
           <input type="password" id="password" placeholder="*********" className="input input-password"/>
        </div>
-
-        <input type="submit" value="Create" className="primary-button create-account-button"/>
+        <Button styles={'primary-button create-account-button'}
+        text={'Create'}
+        type={'button'}/>
+        
        </form>
         </div>
     </div>
