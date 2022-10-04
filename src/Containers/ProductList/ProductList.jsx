@@ -11,10 +11,12 @@ const ProductList = () => {
 		<section className="main-container">
 			<div className="ProductList">
 				{!products.lenght && products.map(product=>(
-					<ProductItem  
+					product.images[0]!=='' &&
+					 <ProductItem  
 					key={product.id}
 					product={product}
 					/>
+					
 				))}
 			</div>
 		</section>
