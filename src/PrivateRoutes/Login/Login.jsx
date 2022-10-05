@@ -1,18 +1,30 @@
-import React,{useRef} from 'react'
-import { Button } from '../../Components'
+import React,{useContext, useState} from 'react';
+import { AppContext } from '../../Context/AppContext';
+import { Button } from '../../Components';
 import './Login.css';
 
 const Login = () => {
-    const form = useRef(null);
 
+    const [customMail, setCustomMail] = useState('');
+    const [customPassword, setCustomPassword] = useState('');
+    const{state}=useContext(AppContext);
+   
     const handleSubmit = (event) => {
 		event.preventDefault();
-		const formData = new FormData(form.current);
-		const data = {
-			usename: formData.get('email'),
-			password: formData.get('password')
+		 if(customMail===''|| customPassword===''){
+            alert('Por favor ingresa tus credenciales');
+        }
+        else{
+            const data = {
+			userMail:customMail,
+			userPassword: customPassword
 		}
-		console.log(data);
+       
+		state.loged.push(data)
+        setCustomMail('');
+        setCustomPassword('');
+        location.replace('/');
+    }
         
 	}
 
@@ -23,13 +35,24 @@ const Login = () => {
             <div className="form-container">
                 <img src="logo_yard_sale.svg" alt="logo" className="logo" />
 
-                <form action="/" className="form" ref={form}  />
+                <form action="/" className="form"/>
 
                 <label htmlFor="email" className="label">Email address</label>
-                <input type="text" name="email" placeholder="email@example.com" className="input input-email" />
+                <input
+                 type="text"
+                 id="email"
+                 placeholder="email@example.com"
+                 className="input input-email"
+                 value={customMail}
+                 onChange={(e)=>setCustomMail(e.target.value)} />
 
                 <label htmlFor="password" className="label">Password</label>
-                <input type="password" name="password" placeholder="*********" className="input input-password" />
+                <input type="password"
+                 id="password"
+                  placeholder="*********"
+                 className="input input-password" 
+                 value={customPassword}
+                 onChange={(e)=>setCustomPassword(e.target.value)}/>
 
                 
                 <Button text={'Log in'} 
@@ -58,4 +81,4 @@ const Login = () => {
     )
 }
 
-export { Login }
+export {Login}

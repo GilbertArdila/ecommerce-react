@@ -1,7 +1,8 @@
 import React,{useState} from 'react';
 
 const initialState={
-    cart:[]
+    cart:[],
+    loged:[]
 }
 
 const UseInitialState = () => {
