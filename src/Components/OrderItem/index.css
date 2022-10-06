@@ -24,4 +24,7 @@
 }
 .OrderItem img{
 	cursor: pointer;
+	background-color: var(--black);
+	border-radius: 50px;
+	
 }

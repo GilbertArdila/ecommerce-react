@@ -1,26 +1,35 @@
-import React,{useContext, useState} from 'react';
-import { AppContext } from '../../Context/AppContext';
+import React,{ useState,useEffect} from 'react';
 import { Button } from '../../Components';
+import Swal from 'sweetalert2';
 import './Login.css';
 
 const Login = () => {
-
+    
+   
     const [customMail, setCustomMail] = useState('');
     const [customPassword, setCustomPassword] = useState('');
-    const{state}=useContext(AppContext);
+
+    
    
-    const handleSubmit = (event) => {
-		event.preventDefault();
+   
+    const handleSubmit = (e) => {
+		e.preventDefault();
 		 if(customMail===''|| customPassword===''){
-            alert('Por favor ingresa tus credenciales');
+            Swal.fire({
+                title: 'Por favor ingresa tus credenciales',
+                showClass: {
+                  popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                  popup: 'animate__animated animate__fadeOutUp'
+                }
+              })
         }
         else{
             const data = {
 			userMail:customMail,
 			userPassword: customPassword
 		}
-       
-		state.loged.push(data)
         setCustomMail('');
         setCustomPassword('');
         location.replace('/');
@@ -35,7 +44,7 @@ const Login = () => {
             <div className="form-container">
                 <img src="logo_yard_sale.svg" alt="logo" className="logo" />
 
-                <form action="/" className="form"/>
+                <form action="/" className="form" />
 
                 <label htmlFor="email" className="label">Email address</label>
                 <input
@@ -61,12 +70,14 @@ const Login = () => {
                 onClick={handleSubmit}
                 />
 
-                <a href="/">Forgot my password</a>
+                <a href="/recovery-password">Forgot my password</a>
                 <form />
 
                 <Button text={'Sing up'} 
                 styles={'secondary-button signup-button'}
-                type={'button'}/>
+                type={'button'}
+                
+                />
                
                 
             

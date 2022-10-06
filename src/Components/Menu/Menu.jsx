@@ -6,19 +6,23 @@ const Menu = () => {
   return (
     <div className="Menu">
 			<ul>
-			{menuLinks.map(link=> <Links to={link.to} text={link.text} className={`${link.class}`}/>)}
+			{menuLinks.map(link=> <Links 
+			to={link.to} 
+			text={link.text} 
+			key={link.text}
+			className={`${link.class}`}/>)}
 			</ul>
 		</div>
   )
 }
 const menuLinks=[];
 menuLinks.push({
-  to:'/',
+  to:'/orders',
   text:'My Orders',
   class:'title'
 });
 menuLinks.push({
-	to:'/',
+	to:'/account',
 	text:'My account',
 	class:''
   });

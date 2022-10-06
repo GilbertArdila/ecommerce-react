@@ -1,7 +1,7 @@
-import React,{useContext} from 'react';
+import React,{useContext,useState} from 'react';
 import { AppContext } from '../../Context/AppContext';
 import './index.css';
-import {OrderItem} from '../../Components'
+import {Button, OrderItem} from '../../Components'
 
 const MyOrder = ({setToggleOrders}) => {
  const {state}=useContext(AppContext);
@@ -13,8 +13,8 @@ const MyOrder = ({setToggleOrders}) => {
  const finalPrice=state.cart.reduce((sum,item)=>sum+parseInt(item.price),0)
  
   return (
-    
-		<aside className="MyOrder">
+    <>
+    <aside className="MyOrder">
         <div className="title-container">
             <img src="flechita.svg" alt="arrow" onClick={handleToggle}/>
             <p className="title">My order</p>
@@ -31,11 +31,14 @@ const MyOrder = ({setToggleOrders}) => {
                 </p>
                 <p>${finalPrice}</p>
             </div>
-            <button className="primary-button">
-                Checkout
-            </button>
+            <Button text={'Checkout'} styles={'primary-button'} type={'button'} onClick={()=>location.replace('/checkout')}/>
+           
         </div>
+        
     </aside>
+    
+    </>
+		
   )
 }
 

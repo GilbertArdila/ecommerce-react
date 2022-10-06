@@ -1,12 +1,17 @@
 import React,{useState} from 'react';
 
+ 
+
 const initialState={
     cart:[],
-    loged:[]
+   
 }
 
 const UseInitialState = () => {
     const [state, setState] = useState(initialState);
+   
+ 
+    
 
     const addToCart=(payload)=>{
         setState({
@@ -26,6 +31,9 @@ const UseInitialState = () => {
     state,
     addToCart,
     removeFromCart
+    
+   
+   
   }
 }
 

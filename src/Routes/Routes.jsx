@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Layout } from '../Containers';
 import { Login} from '../PrivateRoutes';
@@ -8,17 +8,24 @@ import {AppContext} from '../Context/AppContext';
 import { UseInitialState } from '../Hooks';
 
 const Routes = () => {
+    
+
     //to use context
     const initialState=UseInitialState();
     return (
         <AppContext.Provider value={initialState}>
         <BrowserRouter>
-            <Layout>
+            <Layout  >
                 
                 <Switch>
 
-                    <Route exact path={'/'} component={Home} />
-                    <Route exact path={'/login'} component={Login} />
+                    <Route exact path={'/'}>
+                        <Home />
+                    </Route>
+
+                    <Route exact path={'/login'}>
+                        <Login />
+                    </Route>
                     <Route exact path={'/recovery-password'} component={PasswordRecover} />
                     <Route exact path={'/send-email'} component={SendEmail} />
                     <Route exact path={'/new-password'} component={NewPassword} />
