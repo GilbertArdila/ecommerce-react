@@ -1,11 +1,12 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './index.css';
 
 const Links = ({to,text}) => {
   return (
     
     <li  >
-    <a href={to}>{text}</a>
+    <Link to={to}>{text}</Link>
     </li>
 
 

@@ -1,4 +1,4 @@
-import React, { useState,useContext,useEffect } from 'react';
+import React, { useState,useContext} from 'react';
 import { AppContext } from '../../Context/AppContext';
 import { Links } from '../Links/Links'
 import { Menu } from '../Menu/Menu';
@@ -6,9 +6,13 @@ import {MyOrder} from '../../Containers';
 import loginImage from '../../../public/login.webp';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
 import { menuLinks } from '../../menuLinks';
+import { useHistory } from 'react-router-dom';
 
 const Header = () => {
   const{state}=useContext(AppContext);
+  console.log(state.cart)
+  console.log(state.login[0])
+  const history=useHistory();
 
  
 	
@@ -33,12 +37,14 @@ const Header = () => {
 			</div>
 			<div className="navbar-right">
 				<ul>
-				    <li 
-					onClick={()=>location.replace('/login')}><img 
+				    
+					{state.login.length> 0 ? <li className="navbar-email" 
+					onClick={handleToggle}>{state.login[0].userMail}</li>:<li 
+					onClick={()=>history.push('/login')}><img 
 					className='navbar-login-image'
 					src={loginImage} alt='login'/></li>
-					<li className="navbar-email" 
-					onClick={handleToggle}>email.com</li>
+}
+					
 
 					<li className="navbar-shopping-cart" onClick={()=>setToggleOrders(!toggleOrders)}>
 						<img src="icon_shopping_cart.svg" alt="shopping cart" />

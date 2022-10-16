@@ -1,20 +1,24 @@
-import React,{ useState,useEffect} from 'react';
+import React,{ useContext,useState} from 'react';
+import { useHistory,Link } from 'react-router-dom';
+import { AppContext } from '../../Context/AppContext';
 import { Button } from '../../Components';
 import Swal from 'sweetalert2';
 import './Login.css';
 
 const Login = () => {
-    
-   
-    const [customMail, setCustomMail] = useState('');
-    const [customPassword, setCustomPassword] = useState('');
+    const{addToLogin}=useContext(AppContext);
+    const history=useHistory();
+    const [mail, setMail] = useState('');
+    const [password, setPassword] = useState('');
 
     
    
    
-    const handleSubmit = (e) => {
-		e.preventDefault();
-		 if(customMail===''|| customPassword===''){
+    const handleSubmit = () => {
+       
+		
+		
+        if(mail===''|| password===''){
             Swal.fire({
                 title: 'Por favor ingresa tus credenciales',
                 showClass: {
@@ -27,12 +31,12 @@ const Login = () => {
         }
         else{
             const data = {
-			userMail:customMail,
-			userPassword: customPassword
+			userMail:mail,
+			userPassword:password 
 		}
-        setCustomMail('');
-        setCustomPassword('');
-        location.replace('/');
+       
+        addToLogin(data);
+        history.push('/');
     }
         
 	}
@@ -44,33 +48,35 @@ const Login = () => {
             <div className="form-container">
                 <img src="logo_yard_sale.svg" alt="logo" className="logo" />
 
-                <form action="/" className="form" />
+                <form  className="form" />
 
                 <label htmlFor="email" className="label">Email address</label>
                 <input
                  type="text"
-                 id="email"
+                 name="email"
                  placeholder="email@example.com"
                  className="input input-email"
-                 value={customMail}
-                 onChange={(e)=>setCustomMail(e.target.value)} />
+                 value={mail}
+                 onChange={(e)=>setMail(e.target.value)}
+                 />
 
                 <label htmlFor="password" className="label">Password</label>
                 <input type="password"
-                 id="password"
+                 name="password"
                   placeholder="*********"
                  className="input input-password" 
-                 value={customPassword}
-                 onChange={(e)=>setCustomPassword(e.target.value)}/>
+                 value={password}
+                 onChange={(e)=>setPassword(e.target.value)}
+                />
 
                 
                 <Button text={'Log in'} 
                 styles={'primary-button login-button'}
-                type={'submit'}
+                type={'button'}
                 onClick={handleSubmit}
                 />
 
-                <a href="/recovery-password">Forgot my password</a>
+                <Link to="/recovery-password">Forgot my password </Link>
                 <form />
 
                 <Button text={'Sing up'} 

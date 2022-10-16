@@ -4,6 +4,7 @@ import React,{useState} from 'react';
 
 const initialState={
     cart:[],
+    login:[]
    
 }
 
@@ -27,10 +28,18 @@ const UseInitialState = () => {
       })
     }
 
+    const addToLogin=(payload)=>{
+      setState({
+          ...state,
+          login:[...state.login,payload]
+      });
+  }
+
   return {
     state,
     addToCart,
-    removeFromCart
+    removeFromCart,
+    addToLogin
     
    
    
