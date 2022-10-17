@@ -1,9 +1,11 @@
 import React,{useContext,useState} from 'react';
+import { useHistory } from 'react-router-dom';
 import { AppContext } from '../../Context/AppContext';
 import './index.css';
 import {Button, OrderItem} from '../../Components'
 
 const MyOrder = ({setToggleOrders}) => {
+ const history=useHistory();   
  const {state}=useContext(AppContext);
 
  const handleToggle=()=>{
@@ -31,7 +33,7 @@ const MyOrder = ({setToggleOrders}) => {
                 </p>
                 <p>${finalPrice}</p>
             </div>
-            <Button text={'Checkout'} styles={'primary-button'} type={'button'} onClick={()=>location.replace('/checkout')}/>
+            <Button text={'Checkout'} styles={'primary-button'} type={'button'} onClick={()=>history.push('/checkout')}/>
            
         </div>
         

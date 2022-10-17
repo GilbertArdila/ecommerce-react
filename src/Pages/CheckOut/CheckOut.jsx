@@ -5,7 +5,11 @@ import {OrderItem} from '../../Components';
 
 const CheckOut = () => {
  const {state}=useContext(AppContext);
- console.log(state)
+const{cart,login}=state;
+console.log(cart)
+console.log(login)
+
+const totalAmount=cart.reduce((sum,sell)=>sum+parseInt(sell.price),0)
 
   return (
     <div className="check-out">
@@ -16,12 +20,14 @@ const CheckOut = () => {
         <div className="order">
           <p>
             <span>03.25.21</span>
-            <span>6 articles</span>
+            <span>{cart.length} articles</span>
           </p>
-          <p>$560.00</p>
+          <p>${totalAmount}</p>
         </div>
         {/* nos falta pasar las props pero no podemos traer el contexto */}
-        {/* <OrderItem/> */}
+        {cart.map((product)=>(
+          <OrderItem  product={product}/>
+        ))}
 
        
 
