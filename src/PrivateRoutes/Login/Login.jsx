@@ -82,6 +82,7 @@ const Login = () => {
                 <Button text={'Sing up'} 
                 styles={'secondary-button signup-button'}
                 type={'button'}
+                onClick={()=>history.push('/')}
                 
                 />
                

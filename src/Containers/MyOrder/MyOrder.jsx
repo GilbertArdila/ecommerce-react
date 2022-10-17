@@ -1,18 +1,39 @@
 import React,{useContext,useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import { AppContext } from '../../Context/AppContext';
+import {Button, OrderItem} from '../../Components';
+import { handleTotalAmount } from '../../Helpers/handleTotalAmount';
+import Swal from 'sweetalert2';
+
 import './index.css';
-import {Button, OrderItem} from '../../Components'
 
 const MyOrder = ({setToggleOrders}) => {
  const history=useHistory();   
  const {state}=useContext(AppContext);
+ const{login}=state;
 
  const handleToggle=()=>{
     setToggleOrders(false)
  }
 
- const finalPrice=state.cart.reduce((sum,item)=>sum+parseInt(item.price),0)
+ const handleCheckout=()=>{
+   if(login.length===0){
+    Swal.fire({
+        title: 'debes ingresar tus credenciales para continuar con el pedido',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      })
+      history.push('/login')
+   }else{
+       history.push('/checkout')
+   }
+    
+ }
+
  
   return (
     <>
@@ -31,9 +52,9 @@ const MyOrder = ({setToggleOrders}) => {
                 <p>
                     <span>Total</span>
                 </p>
-                <p>${finalPrice}</p>
+                <p>${handleTotalAmount()}</p>
             </div>
-            <Button text={'Checkout'} styles={'primary-button'} type={'button'} onClick={()=>history.push('/checkout')}/>
+            <Button text={'Checkout'} styles={'primary-button'} type={'button'} onClick={handleCheckout}/>
            
         </div>
         

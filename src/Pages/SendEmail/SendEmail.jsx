@@ -1,8 +1,10 @@
 import React from 'react';
+import { useHistory,Link } from 'react-router-dom';
 import { Button } from '../../Components';
 import './index.css';
 
 const SendEmail = () => {
+	const history=useHistory();
   return (
     <div className="SendEmail">
 			<div className="form-container">
@@ -14,11 +16,13 @@ const SendEmail = () => {
 				</div>
 				<Button styles={'primary-button login-button'}
 				text={'Login'}
-				type={'button'}/>
+				type={'button'}
+				onClick={()=>history.push('/login')}
+				/>
 				
 				<p className="resend">
 					<span>Didn't receive the email?</span>
-					<a href="/">Resend</a>
+					<Link to="/recovery-password">Resend</Link>
 				</p>
 			</div>
 		</div>

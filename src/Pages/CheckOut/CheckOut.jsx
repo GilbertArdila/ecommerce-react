@@ -1,32 +1,33 @@
 import React,{useContext} from 'react';
-import './index.css';
 import { AppContext } from '../../Context/AppContext';
 import {OrderItem} from '../../Components';
+import { handleTotalAmount } from '../../Helpers/handleTotalAmount';
+import './index.css';
 
 const CheckOut = () => {
  const {state}=useContext(AppContext);
 const{cart,login}=state;
-console.log(cart)
-console.log(login)
+const date =new Date();
 
-const totalAmount=cart.reduce((sum,sell)=>sum+parseInt(sell.price),0)
+
 
   return (
     <div className="check-out">
     <div className="check-out-container">
       <h1 className="title">My order</h1>
+      <h3>{login[0].userMail}</h3>
 
       <div className="check-out-content">
         <div className="order">
           <p>
-            <span>03.25.21</span>
+            <span>{date.toISOString().split('T')[0]}</span>
             <span>{cart.length} articles</span>
           </p>
-          <p>${totalAmount}</p>
+          <p>${handleTotalAmount()}</p>
         </div>
         {/* nos falta pasar las props pero no podemos traer el contexto */}
         {cart.map((product)=>(
-          <OrderItem  product={product}/>
+          <OrderItem  product={product} key={product.id}/>
         ))}
 
        

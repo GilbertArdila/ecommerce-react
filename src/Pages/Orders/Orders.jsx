@@ -4,11 +4,11 @@ import { Order } from '../../Components';
 
 const Orders = () => {
   return (
-    <div class="my-order">
-    <div class="my-order-container">
-      <h1 class="title">My orders</h1>
+    <div className="my-order">
+    <div className="my-order-container">
+      <h1 className="title">My orders</h1>
 
-      <div class="my-order-content">
+      <div className="my-order-content">
 
        <Order/>
 

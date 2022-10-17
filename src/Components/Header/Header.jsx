@@ -10,8 +10,6 @@ import { useHistory } from 'react-router-dom';
 
 const Header = () => {
   const{state}=useContext(AppContext);
-  console.log(state.cart)
-  console.log(state.login[0])
   const history=useHistory();
 
  

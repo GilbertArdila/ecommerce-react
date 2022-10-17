@@ -6,12 +6,9 @@ import { AppContext } from '../../Context/AppContext';
 const Home = () => {
   const {state}=useContext(AppContext);
   const{cart,login}=state;
-  console.log(cart)
   
 
-  useEffect(() => {
-   console.log(login)
-  }, [])
+ 
   
   return (
     <>
