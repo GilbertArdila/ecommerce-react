@@ -22,7 +22,7 @@ const Orders = () => {
       <div className="my-order-content">
 
        <Order/>
-       <div onClick={handleClick}>◀</div>
+       <div onClick={handleClick}>◀ Regresar</div>
 
        
 
