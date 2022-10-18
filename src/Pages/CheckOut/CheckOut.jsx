@@ -1,4 +1,5 @@
 import React,{useContext} from 'react';
+import { Link } from 'react-router-dom';
 import { AppContext } from '../../Context/AppContext';
 import {OrderItem} from '../../Components';
 import { handleTotalAmount } from '../../Helpers/handleTotalAmount';
@@ -37,6 +38,7 @@ const date =new Date();
         
       </div>
     </div>
+    <Link to={'/'}> 🔙</Link>
   </div>
   )
 }

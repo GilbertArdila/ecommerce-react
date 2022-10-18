@@ -10,7 +10,7 @@ import './index.css';
 const MyOrder = ({setToggleOrders}) => {
  const history=useHistory();   
  const {state}=useContext(AppContext);
- const{login}=state;
+ const{login,cart}=state;
 
  const handleToggle=()=>{
     setToggleOrders(false)
@@ -44,7 +44,7 @@ const MyOrder = ({setToggleOrders}) => {
         </div>
         <div className="my-order-content">
             {/* hacemos render del número de elementos que están en el estado */}
-            {state.cart.map(product=>(
+            {cart.map(product=>(
                  <OrderItem  product={product} key={`orderItem-${product.id}`}/>
             ))}
            
