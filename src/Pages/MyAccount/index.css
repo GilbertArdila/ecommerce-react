@@ -53,6 +53,9 @@
     margin-top: 14px;
     margin-bottom: 30px;
   }
+  .change-password{
+    cursor: pointer;
+  }
   @media (max-width: 640px) {
     .form-container {
       height: 100%;

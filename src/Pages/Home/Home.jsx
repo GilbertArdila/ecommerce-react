@@ -1,4 +1,4 @@
-import React,{useContext,useEffect} from 'react';
+import React,{useContext} from 'react';
 import { Header } from '../../Components';
 import {ProductList} from '../../Containers';
 import { AppContext } from '../../Context/AppContext';
@@ -13,6 +13,7 @@ const Home = () => {
   return (
     <>
      <Header  />
+     
      <ProductList/>
     </>
    

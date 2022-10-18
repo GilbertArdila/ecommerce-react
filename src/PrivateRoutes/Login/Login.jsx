@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import './Login.css';
 
 const Login = () => {
+    
     const{addToLogin}=useContext(AppContext);
     const history=useHistory();
     const [mail, setMail] = useState('');
