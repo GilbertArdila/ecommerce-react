@@ -4,7 +4,8 @@ import React,{useState} from 'react';
 
 const initialState={
     cart:[],
-    login:[]
+    login:[],
+    categorySearch:[]
    
 }
 
@@ -35,14 +36,19 @@ const UseInitialState = () => {
       });
   }
 
+  const addToCategorySearch=(payload)=>{
+    setState({
+        ...state,
+        categorySearch:[payload]
+    });
+}
+
   return {
     state,
     addToCart,
     removeFromCart,
-    addToLogin
-    
-   
-   
+    addToLogin,
+    addToCategorySearch
   }
 }
 

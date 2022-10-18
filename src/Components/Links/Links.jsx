@@ -1,12 +1,21 @@
-import React from 'react';
+import React,{useContext} from 'react';
+import { AppContext } from '../../Context/AppContext';
 import {Link} from 'react-router-dom';
 import './index.css';
 
-const Links = ({to,text}) => {
+const Links = ({to,text,search}) => {
+  const {addToCategorySearch}=useContext(AppContext);
+ 
+
+  const handleClick=()=>{
+    
+    addToCategorySearch(search)
+  }
+
   return (
     
     <li  >
-    <Link to={to}>{text}</Link>
+    <Link to={to} onClick={handleClick}>{text}</Link>
     </li>
 
 

@@ -1,27 +1,33 @@
 const menuLinks=[];
 menuLinks.push({
 	to:'/',
-	text:'All'
+	text:'All',
+	search:''
 });
 menuLinks.push({
 	to:'/',
-	text:'Clotes'
+	text:'Clothes',
+	search:'Clothes'
 });
 menuLinks.push({
 	to:'/',
-	text:'Electronics'
+	text:'Electronics',
+	search:'Electronics'
 });
 menuLinks.push({
 	to:'/',
-	text:'Fornitures'
+	text:'Fornitures',
+	search:'Furniture'
 });
 menuLinks.push({
 	to:'/',
-	text:'Toys'
+	text:'Shoes',
+	search:'Shoes'
 });
 menuLinks.push({
 	to:'/',
-	text:'Others'
+	text:'Others',
+	search:'Others'
 });
 
 export {menuLinks}

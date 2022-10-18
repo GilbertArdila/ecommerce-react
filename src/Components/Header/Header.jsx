@@ -29,7 +29,7 @@ const Header = () => {
 			<div className="navbar-left">
 				<img src="logo_yard_sale.svg" alt="logo" className="logo" />
 				<ul>
-					{menuLinks.map(link=><Links to={link.to} text={link.text} key={link.text}/>)}
+					{menuLinks.map(link=><Links to={link.to} text={link.text} search={link.search} key={link.text}/>)}
 					
 				</ul>
 			</div>
