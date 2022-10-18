@@ -1,11 +1,12 @@
 import React,{useState} from 'react';
+import { Link } from 'react-router-dom';
 import './index.css';
 import { menuLinks } from '../../menuLinks';
 import {Links} from '../Links/Links';
 import { Menu } from '../Menu/Menu';
 
 const MobileMenu = () => {
-
+ 
   const handleToogle=()=>{
    setLogout(false);
     setToggle(true)
@@ -20,6 +21,7 @@ const MobileMenu = () => {
         <Links 
         to={link.to}
         text={link.text}
+        search={link.search}
         key={link.text}/>
      ))}
     </ul>
@@ -38,7 +40,7 @@ const MobileMenu = () => {
         platzi@example.com
       </li>
      {logout &&  <li>
-        <a href="/" className="sign-out">Sign out</a>
+        <Link to="/" className="sign-out">Sign out</Link>
       </li>}
     </ul>
     {toggle && <Menu/>}

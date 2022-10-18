@@ -23,7 +23,7 @@ const ProductList = () => {
 		 }
 		
 		
-		console.log(search)
+		
 	}, [categorySearch])
 	
 	
